@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getApi } from '../services/api.js';
+import { Link } from 'react-router-dom';
 
 export default class ApiData extends Component {
   state = {
@@ -12,21 +13,18 @@ export default class ApiData extends Component {
     this.setState({ characters });
   }
 
-  handleNameClick = async (e) => {
-    e.preventDefault();
-    this.props.history.push(`/Details/${character._id}`)
-  }
-
-
   render() {
     return (
       < div >
         <h1>Lord of the Rings Characters</h1>
         <ul>
           {this.state.characters.map(character => (
-            <li key={character._id}>
-              <a onClick={this.handleNameClick}>{character.name}</a>
-            </li>))}
+            <Link to={`/details/${character._id}`} key={`${character._id}`}>
+              <li key={character._id}>
+                <span>{character.name}</span>
+              </li>
+            </Link>
+          ))}
         </ul>
         <button onClick={this.handleButtonClick}>Get Characters</button>
       </div >
