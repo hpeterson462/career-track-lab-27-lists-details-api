@@ -6,24 +6,25 @@ export default class ApiData extends Component {
     characters: []
   }
 
-  handleClick = async () => {
+  handleButtonClick = async () => {
     const characters = await getApi();
-
+    console.log(characters);
     this.setState({ characters });
   }
 
+
   render() {
     return (
-      <div>
+      < div >
         <h1>Lord of the Rings Characters</h1>
         <ul>
           {this.state.characters.map(character => (
-            <li key={character.id}>
-              <a href={character.name}>{character.name}</a>
+            <li key={character._id}>
+              <a>{character.name}</a>
             </li>))}
         </ul>
-        <button onClick={this.handleClick}>Get Characters</button>
-      </div>
+        <button onClick={this.handleButtonClick}>Get Characters</button>
+      </div >
     );
   }
 }

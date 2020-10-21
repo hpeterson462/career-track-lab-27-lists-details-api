@@ -5,7 +5,5 @@ export const getApi = () => {
     }
   })
     .then(res => res.json())
-    .then(json => json.docs.map(character => {
-      return character.name
-    }))
+    .then(json => json.docs);
 };
