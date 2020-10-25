@@ -19,7 +19,7 @@ export default class App extends Component {
               render={(routerProps) => <List {...routerProps} />}
             />
             <Route
-              path="/details"
+              path="/Details/characterId"
               exact
               render={(routerProps) => <Details {...routerProps} />}
             />

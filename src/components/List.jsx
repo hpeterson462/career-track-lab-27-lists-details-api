@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { getApi } from '../services/api.js';
 import { Link } from 'react-router-dom';
 
-export default class ApiData extends Component {
+export default class List extends Component {
   state = {
     characters: []
   }

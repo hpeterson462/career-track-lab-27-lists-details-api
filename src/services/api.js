@@ -7,3 +7,14 @@ export const getApi = () => {
     .then(res => res.json())
     .then(json => json.docs);
 };
+
+export const getApiById = (characterId) => {
+  return fetch(`https://the-one-api.dev/v2/character/${characterId}`, {
+    headers: {
+      'Authorization': 'Bearer pvHkTVdmM4UBgOO_K0ag'
+    }
+  })
+    .then(res => res.json())
+    .then(json => json.docs)
+    .then(console.log(json.docs));
+}
